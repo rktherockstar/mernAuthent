@@ -13,7 +13,7 @@ function Home() {
         <h1>Welcome to MERN Authentication App!</h1><br></br><h2> {storeObj.loginReducer.userDetails.firstName } 
         {storeObj.loginReducer.userDetails.lastName }
         </h2>
-        <img src={`http://localhost:4567/${storeObj.loginReducer.userDetails.profilePic}`}></img>
+        <img src={`/${storeObj.loginReducer.userDetails.profilePic}`}></img>
         <p></p>
     </div>
   )

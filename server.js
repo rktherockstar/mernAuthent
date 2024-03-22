@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const multer = require("multer");
 const dotenv = require("dotenv");
+const path = require("node:path");
 dotenv.config();
 const bcrypt = require("bcrypt");
 
@@ -24,7 +25,8 @@ const upload = multer({ storage: storage });
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
-app.use('/uploads', express.static('uploads'))
+app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname,"./frontend/build")));
 
 let userSchema = new mongoose.Schema({
  firstName:{

@@ -23,7 +23,7 @@ function Login() {
       body:dataToSend,
     }
 
-    let JSONData = await  fetch("http://localhost:4567/login",reqOptions);
+    let JSONData = await  fetch("/login",reqOptions);
     let JSOData = await JSONData.json();
     if(JSOData.status === "failure"){
       alert(JSOData.msg);
@@ -47,7 +47,7 @@ function Login() {
       body:dataToSend,
     }
 
-    let JSONData = await  fetch("http://localhost:4567/login",reqOptions);
+    let JSONData = await  fetch("/login",reqOptions);
     let JSOData = await JSONData.json();
     if(JSOData.status === "failure"){
       alert(JSOData.msg);
@@ -71,7 +71,7 @@ function Login() {
         method:"POST",
         body:dataToSend,
       }
-      let JSONData = await fetch("http://localhost:4567/loginWithToken",reqOptions);
+      let JSONData = await fetch("/loginWithToken",reqOptions);
   
       let JSOData = await JSONData.json();
       if(JSOData.status === "failure"){

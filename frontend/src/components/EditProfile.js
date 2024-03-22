@@ -25,7 +25,7 @@ function EditProfile() {
    
   
     mobileNoInputRef.current.value = storeObj.loginReducer.userDetails.mobileNo;
-    let profilePicPath = `http://localhost:4567/${storeObj.loginReducer.userDetails.profilePic}`;
+    let profilePicPath = `/${storeObj.loginReducer.userDetails.profilePic}`;
     setProfilePicPath(profilePicPath);
   }, []);
   
@@ -49,7 +49,7 @@ function EditProfile() {
           body: dataToSend,
         };
   
-        let JSONData = await fetch("http://localhost:4567/updateProfile", reqOptions);
+        let JSONData = await fetch("/updateProfile", reqOptions);
         let JSOData = await JSONData.json();
         if(JSOData.status == "success"){
           alert(JSOData.msg);
